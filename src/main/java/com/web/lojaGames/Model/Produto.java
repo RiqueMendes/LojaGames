@@ -24,6 +24,10 @@ public class Produto {
 
 	@NotNull
 	private double valor;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produtos")
+	private Categoria categoria;
 
 	public long getId() {
 		return id;

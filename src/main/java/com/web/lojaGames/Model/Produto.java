@@ -1,5 +1,19 @@
 package com.web.lojaGames.Model;
 
+/* PORTUGUES
+ * Este código cria a tabela PRODUTO, com os campo: ID, DESCRICAO, NOME, VALOR e CATEGORIA.
+ * incluso os gets e sets necessários para sua funcionalização.
+ * 
+ * ENGLISH
+ * This code creates a table called PRODUTO (PRODUCTS) with the ID, NOME(NAME), VALOR (VALUE) 
+ * and  CATEGORIA (CATEGORY) as fields.
+ * Including Gets and sets needed for it's use.
+ * 
+ * ESPAÑOL
+ * Este código crea la tabla PRODUCTO, con los campos: ID, NOME(DESCRIPCIÓN), NOME(NOMBRE), VALOR y CATEGORIA(CATEGORÍA).
+ * Incluyendo los gets y sets necesarios para su funcionalización
+ */
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,10 +39,25 @@ public class Produto {
 	@NotNull
 	private double valor;
 	
+	/*
+	 * POTUGUES
+	 * Cria a relacao.
+	 * 
+	 * ENGLISH 
+	 * Creates the relationship
+	 * 
+	 * ESPAÑOL
+	 * Crea la relación.
+	 */
+		
 	@ManyToOne
 	@JsonIgnoreProperties("produtos")
 	private Categoria categoria;
 
+	/*
+	 * Get/set
+	 */
+	
 	public long getId() {
 		return id;
 	}

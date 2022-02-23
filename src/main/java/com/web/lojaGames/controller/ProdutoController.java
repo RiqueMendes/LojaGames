@@ -1,5 +1,16 @@
 package com.web.lojaGames.controller;
 
+/*
+ * PORTUGUES
+ * A classe CONTROLLER serve para organizar as requisicoes que serao feitas: get, post, put, delete
+ * 
+ * ENGLISH 
+ * The CONTROLLER class is used to organize the requests that will be made: get, post, put, delete
+ * 
+ * ESPAÑOL
+ * La clase CONTROLLER se utiliza para organizar las peticiones que se harán: get, post, put, delete
+ */
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +31,30 @@ import com.web.lojaGames.Model.Produto;
 import com.web.lojaGames.repository.CategoriaRepository;
 import com.web.lojaGames.repository.ProdutoRepository;
 
+/*PORTUGUES
+ * caminho
+ * ENGLISH
+ * path
+ * ESPAÑOL
+ * camino
+ */
+
 @RestController
 @RequestMapping("/produto")
-@CrossOrigin("*")
+@CrossOrigin("*") //permicoes / permits / permisos
 public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository repository;
 	
-	@GetMapping("/all")
-	public ResponseEntity<List<Produto>> getAll(){
+	//Seleciona e mostra todos os dados / Selects and shows all data / Selecciona y muestra todos los datos
+	
+	@GetMapping("/all") 
+	public ResponseEntity<List<Produto>> getAll(){    
 		return ResponseEntity.ok(repository.findAll());
 	}
+	
+	//seleciona por ID / selects by ID /seleccionar por ID
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> getById(@PathVariable long id){
@@ -39,16 +62,19 @@ public class ProdutoController {
 				map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
+	//seleciona por DESCRICAO / selects by DESCRIPTION /seleccionar por DESCRIPCIÓN
 	
 	@GetMapping("/descricao")
 	public ResponseEntity<List<Produto>> getByDescricao(@PathVariable String descricao){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
+	//POSTAGEM / POST / PUBLICACIÓN
 	
 	@PostMapping
 	public ResponseEntity<Produto> post (@RequestBody Produto produto){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
 	}
+	// ATUALIZACAO / UPDATE / ACTUALIZACIÓN
 	
 	@PutMapping
 	public ResponseEntity<Produto> put (@RequestBody Produto produto){

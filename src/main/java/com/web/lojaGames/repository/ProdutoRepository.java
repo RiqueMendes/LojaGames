@@ -1,4 +1,16 @@
 package com.web.lojaGames.repository;
+
+/*
+ * PORTUGES
+ * codigo utilizado para realizar consultas na tabela PRODUTOS no BANCO DE DADOS
+ * 
+ * ENGLISH
+ * code used to query the PRODUTOS(PRODUCTS) table in the DATABASE
+ * 
+ * ESPAÑOL
+ * código utilizado para realizar consultas en la tabla PRODUTOS(PRODUCTOS) de la BASE DE DATOS
+ */
+
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;

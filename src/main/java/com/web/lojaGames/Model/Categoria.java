@@ -1,5 +1,18 @@
 package com.web.lojaGames.Model;
 
+/* PORTUGUES
+ * Este código cria a tabela CATEGORIA, com os campo: ID, GENERO, PRODUTORA e DESCRICAO.
+ * Incluso os gets e sets necessários para sua funcionalização.
+ * 
+ * ENGLISH
+ * This code creates a table called CATEGORIA(CATEGORY) with the ID, NOME(NAME), VALOR (VALUE) 
+ * and  CATEGORIA (CATEGORY) as fields.
+ * 
+ * * ESPAÑOL
+ ** Este código crea la tabla CATEGORIA(CATEGORÍA), con los campos: ID, GENERO, PRODUTORA(PRODUCTOR) y DESCRICAO(DESCRIPCIÓN).
+ * Incluye los gets y sets necesarios para su funcionalización.
+ */
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,10 +42,25 @@ public class Categoria {
 	@NotNull
 	private String descricao;
 
+	/*
+	 * POTUGUES
+	 * Cria a relao.
+	 * 
+	 * ENGLISH 
+	 * Creates the relationship
+	 * 
+	 * ESPAÑOL
+	 * Crea la relación.
+	 */
+	
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produtos;
 
+	/*
+	 * Get/set
+	 */
+	
 	public long getId() {
 		return id;
 	}

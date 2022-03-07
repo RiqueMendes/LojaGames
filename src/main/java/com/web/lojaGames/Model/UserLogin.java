@@ -8,7 +8,7 @@ public class UserLogin {
 	
 	private String token;
 	
-	private String user;
+	private String usuario;
 
 	public String getName() {
 		return name;
@@ -35,11 +35,11 @@ public class UserLogin {
 	}
 
 	public String getUser() {
-		return user;
+		return usuario;
 	}
 
 	public void setUser(String user) {
-		this.user = user;
+		this.usuario = usuario;
 	}
 	
 	
